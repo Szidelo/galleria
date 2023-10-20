@@ -1,17 +1,19 @@
 <template>
 	<the-header></the-header>
-	<GalleriaPage/>
+	<router-view></router-view>
 </template>
 
 <script lang="ts">
-import GalleriaPage from "./pages/GalleriaPage.vue";
+import data from "./utils/data.json"
 import { defineComponent } from "vue";
 
 export default defineComponent({
 	name: "App",
-	components: {
-		GalleriaPage,
-	},
+	setup() {
+		return {
+			data,
+		};
+	}
 });
 </script>
 
@@ -25,7 +27,11 @@ export default defineComponent({
   --color-gray: #e5e5e5;
   --color-light-gray: #f3f3f3;
 
-  --transition: all 0.3s ease-in-out;
+  --transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar {
+	display: none;
 }
 
 body {
@@ -49,7 +55,7 @@ code {
 .link-1,
 .link-2,
 body {
-	font-weight: bold;
+	font-weight: bold !important;
 }
 
 .display {

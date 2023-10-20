@@ -2,11 +2,11 @@ class Painting {
     constructor(
         public title: string,
         public author: string,
-        public authorImage: string,
+        public portrait: string,
         public year: number,
         public description: string,
-        public lgImage: string,
-        public smImage: string,
+        public imageLarge: string,
+        public imageSmall: string,
         public source: string,
         public id: string
     ) {}

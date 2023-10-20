@@ -1,52 +1,58 @@
 <template>
-	<div class="painting">
-		<img
-			:src="img"
-			alt=""
-		/>
+	<router-link
+		v-for="paint in paintings"
+		:key="paint.id"
+		:to="paint.id"
+	>
+		<div
+			class="painting"
+		>
+			<img
+				:src="paint.imageSmall"
+				alt=""
+			/>
 
-		<p class="heading-2 title">{{ title }}</p>
-		<p class="subhead-1 author">{{ author }}</p>
-	</div>
+			<p class="heading-2 title">{{ paint.title }}</p>
+			<p class="subhead-1 author">{{ paint.author }}</p>
+		</div>
+	</router-link>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import ListOfPaintings from "@/types/ListOfPaintings";
+import { defineComponent, PropType } from "vue";
 export default defineComponent({
 	name: "PaintingItem",
 	props: {
-		img: {
-			type: String,
+		paintings: {
+			type: Object as PropType<ListOfPaintings>,
 			required: true,
 		},
-		title: {
-			type: String,
-			required: true,
-		},
-        author: {
-            type: String,
-            required: true,
-        },
 	},
 });
 </script>
 
 <style scoped>
 .painting {
-    position: relative;
-    margin-bottom: 40px;
+	position: relative;
+	margin-bottom: 40px;
 }
 
-.title,.author {
-    position: absolute;
-    color: #FFF;
-    left: 20px;
+.title,
+.author {
+	position: absolute;
+	color: #fff;
+	left: 20px;
 }
 .title {
-    bottom: 30px;
-    max-width: 250px;
+	bottom: 30px;
+	max-width: 250px;
 }
 .author {
-    bottom: 10px;
+	bottom: 10px;
+}
+
+a {
+	width: 310px;
 }
 </style>
