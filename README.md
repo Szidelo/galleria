@@ -1,3 +1,5 @@
+Live demo: http://localhost:8080/galleria
+
 # galleria
 
 ## Project setup
