@@ -1,4 +1,4 @@
-Live demo: http://localhost:8080/galleria
+Live demo: https://galleria-a39f8.web.app/galleria
 
 # galleria
 
