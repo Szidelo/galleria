@@ -1,11 +1,18 @@
 <template>
 	<section class="mx-auto pt-4">
-		<PaintingItem :paintings="paintings" />
+		<PaintingItem
+			v-for="paint in paintings"
+			:key="paint.id"
+			:id="paint.id"
+			:author="paint.author"
+			:image-small="paint.imageSmall"
+			:title="paint.title"
+		/>
 	</section>
 </template>
 
 <script lang="ts">
-import ListOfPaintings from "../../types/ListOfPaintings";
+import Painting from "@/classes/Painting";
 import data from "../../utils/data.json";
 
 import PaintingItem from "./PaintingItem.vue";
@@ -17,7 +24,7 @@ export default defineComponent({
 		PaintingItem,
 	},
 	setup() {
-		const paintings = ref<ListOfPaintings>([]);
+		const paintings = ref<Painting[]>([]);
 
 		paintings.value = data.paintings;
 
@@ -37,6 +44,4 @@ section {
 	flex-wrap: wrap;
 	column-gap: 40px;
 }
-
-
 </style>

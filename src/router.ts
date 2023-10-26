@@ -7,7 +7,7 @@ const router = createRouter({
     routes: [
         { path: "/", redirect: "/galleria", },
         { path: "/galleria", component: GalleriaPage},
-        { path: "/:paintId", component: PaintingPage}
+        { path: "/galleria/:paintId", component: PaintingPage}
     ]
 });
 

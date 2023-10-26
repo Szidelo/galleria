@@ -1,9 +1,8 @@
 import { computed } from "vue";
 import Painting from "@/classes/Painting";
-import ListOfPaintings from "@/types/ListOfPaintings";
 
 export function useCurrentIndex(
-	paintings: ListOfPaintings,
+	paintings: Painting[],
 	currentPainting: Painting
 ) {
 	const currentIndex = computed(() =>

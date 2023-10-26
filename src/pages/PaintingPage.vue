@@ -62,7 +62,6 @@ import BasePictureModal from "@/components/ui/BasePictureModal.vue";
 import ImageSlider from "@/components/galleria/ImageSlider.vue";
 import icon from "@/assets/open-icon.svg";
 import Painting from "@/classes/Painting";
-import ListOfPaintings from "@/types/ListOfPaintings";
 import { useCurrentIndex } from "@/composables/useCurrentIndex";
 import data from "../utils/data.json";
 import { useRoute } from "vue-router";
@@ -74,7 +73,7 @@ export default defineComponent({
 		ImageSlider,
 	},
 	setup() {
-		const paintings = ref<ListOfPaintings>([]);
+		const paintings = ref<Painting[]>([]);
 
 		paintings.value = data.paintings;
 

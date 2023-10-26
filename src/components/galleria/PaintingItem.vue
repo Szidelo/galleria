@@ -1,31 +1,40 @@
 <template>
 	<router-link
-		v-for="paint in paintings"
-		:key="paint.id"
-		:to="paint.id"
+		:to="'/galleria/' + id"
 	>
 		<div
 			class="painting"
 		>
 			<img
-				:src="paint.imageSmall"
+				:src="imageSmall"
 				alt=""
 			/>
 
-			<p class="heading-2 title">{{ paint.title }}</p>
-			<p class="subhead-1 author">{{ paint.author }}</p>
+			<p class="heading-2 title">{{ title }}</p>
+			<p class="subhead-1 author">{{ author }}</p>
 		</div>
 	</router-link>
 </template>
 
 <script lang="ts">
-import ListOfPaintings from "@/types/ListOfPaintings";
-import { defineComponent, PropType } from "vue";
+import { defineComponent } from "vue";
 export default defineComponent({
 	name: "PaintingItem",
 	props: {
-		paintings: {
-			type: Object as PropType<ListOfPaintings>,
+		id: {
+			type: String,
+			required: true,
+		},
+		title: {
+			type: String,
+			required: true,
+		},
+		author: {
+			type: String,
+			required: true,
+		},
+		imageSmall: {
+			type: String,
 			required: true,
 		},
 	},
