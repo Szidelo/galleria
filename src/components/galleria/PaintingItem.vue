@@ -6,9 +6,10 @@
 				:src="imageSmall"
 				alt=""
 			/>
-
-			<p class="heading-2 title">{{ title }}</p>
-			<p class="subhead-1 author">{{ author }}</p>
+			<div class="overlay">
+				<p class="heading-2 title">{{ title }}</p>
+				<p class="subhead-1 author">{{ author }}</p>
+			</div>
 		</div>
 	</router-link>
 </template>
@@ -53,6 +54,20 @@ export default defineComponent({
 .image:hover {
 	transform: scale(1.1);
 	opacity: 0.9;
+}
+
+.overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 100px;
+	width: 100%;
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.84) 100%);
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: flex-start;
+	padding: 20px;
 }
 
 .title,
