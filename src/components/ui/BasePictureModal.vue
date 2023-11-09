@@ -1,6 +1,11 @@
 <template>
 	<div class="background-div"></div>
-	<p @click="$emit('close')" class="link-2">close</p>
+	<p
+		@click="$emit('close')"
+		class="link-2"
+	>
+		close
+	</p>
 	<div class="image__container">
 		<img
 			:src="img"
@@ -13,7 +18,7 @@
 import { defineComponent } from "vue";
 export default defineComponent({
 	name: "BasePictureModal",
-    emits: ['close'],
+	emits: ["close"],
 	props: {
 		img: {
 			type: String,
@@ -46,8 +51,8 @@ export default defineComponent({
 
 p {
 	position: absolute;
-    top: 10%;
-    right: 20%;
+	top: 10%;
+	right: 20%;
 	z-index: 3;
 	color: var(--color-white);
 	text-align: right;
@@ -56,7 +61,21 @@ p {
 	font-weight: 700;
 	line-height: normal;
 	letter-spacing: 3px;
-    text-transform: uppercase;
-    cursor: pointer;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+	.image__container img {
+		width: 80%;
+		height: auto;
+	}
+
+	p {
+		position: absolute;
+		top: 5%;
+		right: 10%;
+		z-index: 3;
+	}
 }
 </style>

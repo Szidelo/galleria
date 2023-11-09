@@ -4,7 +4,7 @@
 </template>
 
 <script lang="ts">
-import data from "./utils/data.json"
+import data from "./utils/data.json";
 import { defineComponent } from "vue";
 
 export default defineComponent({
@@ -13,7 +13,7 @@ export default defineComponent({
 		return {
 			data,
 		};
-	}
+	},
 });
 </script>
 
@@ -21,13 +21,17 @@ export default defineComponent({
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap");
 
 :root {
-  --color-black: #000000;
-  --color-white: #ffffff;
-  --color-dark-gray: #7d7d7d;
-  --color-gray: #e5e5e5;
-  --color-light-gray: #f3f3f3;
+	--color-black: #000000;
+	--color-white: #ffffff;
+	--color-dark-gray: #7d7d7d;
+	--color-gray: #e5e5e5;
+	--color-light-gray: #f3f3f3;
 
-  --transition: all 0.3s ease;
+	--transition: all 0.3s ease;
+}
+
+* {
+	transition: var(--transition);
 }
 
 ::-webkit-scrollbar {
@@ -97,5 +101,14 @@ body {
 	font-size: 9px;
 	line-height: 11px;
 	letter-spacing: 2px;
+}
+
+@media (max-width: 575px) {
+	.heading-1 {
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 29px; /* 120.833% */
+	}
 }
 </style>

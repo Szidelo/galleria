@@ -3,7 +3,7 @@
 		<div class="range">
 			<div class="range__value" :style="{ width: index + '%' }"></div>
 		</div>
-		<div class="content d-flex justify-content-between">
+		<div class="content d-flex justify-content-between px-3">
 			<div class="naming">
 				<h2 class="heading-3 mb-4">{{ title }}</h2>
 				<p class="subhead-2">{{ author }}</p>

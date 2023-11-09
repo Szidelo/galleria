@@ -1,11 +1,8 @@
 <template>
-	<router-link
-		:to="'/galleria/' + id"
-	>
-		<div
-			class="painting"
-		>
+	<router-link :to="'/galleria/' + id">
+		<div class="painting">
 			<img
+				class="image"
 				:src="imageSmall"
 				alt=""
 			/>
@@ -45,6 +42,17 @@ export default defineComponent({
 .painting {
 	position: relative;
 	margin-bottom: 40px;
+	overflow: hidden;
+}
+
+.image {
+	height: 100%;
+	width: 100%;
+}
+
+.image:hover {
+	transform: scale(1.1);
+	opacity: 0.9;
 }
 
 .title,

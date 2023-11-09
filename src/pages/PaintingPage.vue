@@ -1,6 +1,6 @@
 <template>
-	<section class="article mx-auto pt-4 d-flex">
-		<div class="article__image-container">
+	<section class="article mx-auto pt-4 row">
+		<div class="col-12 col-sm-8 col-xl-4 article__image-container">
 			<img
 				class="image-large"
 				:src="currentPainting.imageLarge"
@@ -18,11 +18,20 @@
 			</div>
 		</div>
 
-		<div class="article__naming">
-			<h2 class="heading-1 mb-4">{{ currentPainting.title }}</h2>
-			<p class="subhead-1">{{ currentPainting.author }}</p>
+		<div
+			class="col-12 col-sm-4 col-xl-4 d-flex flex-column justify-content-start justify-content-xl-between align-items-start"
+		>
+			<div class="article__naming">
+				<h2 class="heading-1 mb-sm-4">{{ currentPainting.title }}</h2>
+				<p class="subhead-1">{{ currentPainting.author }}</p>
+			</div>
+			<img
+				class="image-portrait"
+				:src="currentPainting.portrait"
+				alt=""
+			/>
 		</div>
-		<div class="article__info">
+		<div class="col-12 col-xl-4 article__info">
 			<h1 class="display">{{ currentPainting.year }}</h1>
 			<div class="article__info-p">
 				<p>{{ currentPainting.description }}</p>
@@ -34,11 +43,6 @@
 				>go to source</a
 			>
 		</div>
-		<img
-			class="image-portrait"
-			:src="currentPainting.portrait"
-			alt=""
-		/>
 	</section>
 
 	<BasePictureModal
@@ -162,7 +166,7 @@ export default defineComponent({
 
 .article__image-container {
 	position: relative;
-	width: 475px;
+	/* width: 475px; */
 	height: 560px;
 }
 .article__image-container .image-large {
@@ -189,18 +193,13 @@ export default defineComponent({
 }
 
 .image-portrait {
-	position: absolute;
-	height: 128px;
-	width: 128px;
-	top: 65%;
-	left: 44%;
+	margin-bottom: -50px;
 }
 
 .article__naming {
+	position: relative;
 	background-color: var(--color-white);
 	height: fit-content;
-	max-height: 400px;
-	width: 530px;
 	padding: 0 60px 60px 60px;
 	margin-left: -80px;
 	z-index: 1;
@@ -246,5 +245,99 @@ export default defineComponent({
 
 .wiki:hover {
 	color: var(--color-black);
+}
+
+@media (max-width: 1200px) {
+	.article {
+		padding: 0 20px;
+	}
+
+	.article__image-container {
+		width: 66.66%;
+		height: 100%;
+	}
+	.article__image-container .image-large {
+		max-width: 100%;
+		max-height: 560px;
+		min-height: 560px;
+	}
+
+	.article__info {
+		margin: 60px auto 0;
+	}
+
+	.article__naming {
+		position: relative;
+		background-color: var(--color-white);
+		height: fit-content;
+		padding: 0 30px 60px 60px;
+		margin-left: -100%;
+		z-index: 1;
+	}
+	.display {
+		margin-left: -100px;
+	}
+
+	.article__info-p p {
+		text-align: justify;
+		max-width: 100%;
+	}
+}
+
+@media (max-width: 768px) {
+	.display {
+		margin-left: -50px;
+	}
+}
+
+@media (max-width: 575px) {
+	.article {
+		padding: 0 0;
+	}
+	.article__image-container {
+		width: 100%;
+		height: 100%;
+	}
+	.article__image-container .image-large {
+		min-height: 280px;
+		height: 280px;
+	}
+
+	.image-link {
+		bottom: auto;
+		top: 30px;
+		left: 30px;
+	}
+
+	.article__naming {
+		position: relative;
+		background-color: var(--color-white);
+		height: fit-content;
+		padding: 30px;
+		margin-left: 0;
+		margin-top: -80px;
+		width: 80%;
+		z-index: 1;
+	}
+
+	.image-portrait {
+		height: auto;
+		width: 64px;
+		z-index: 10;
+	}
+
+	.display {
+		color: #f3f3f3;
+		text-align: right;
+		font-family: Libre Baskerville;
+		font-size: 100px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 100px; /* 100% */
+		margin-bottom: 30px;
+		margin-top: -50px;
+	}
+
+
 }
 </style>

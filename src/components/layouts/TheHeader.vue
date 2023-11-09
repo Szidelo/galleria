@@ -1,7 +1,7 @@
 <template>
 	<header class="mx-auto">
 		<nav
-			class="d-flex justify-content-between flex-column flex-sm-row gap-3 gap-sm-0 align-items-center py-4"
+			class="d-flex justify-content-between flex-column flex-sm-row gap-3 gap-sm-0 align-items-center py-4 px-3"
 		>
 			<img
 				:src="logo"
@@ -10,7 +10,7 @@
 			<router-link
 				@click="toggleSlideShow"
 				v-if="!isSlideShow"
-				to="/paint1"
+				to="/galleria/paint1"
 				class="link-1"
 				>start slideshow
 			</router-link>

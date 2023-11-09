@@ -44,4 +44,26 @@ section {
 	flex-wrap: wrap;
 	column-gap: 40px;
 }
+
+@media (max-width: 1400px) {
+    section {
+        max-height: 2200px;
+        max-width: 1020px;
+    }
+}
+
+@media (max-width: 1020px) {
+    section {
+        max-height: 2900px;
+        max-width: 680px;
+    }
+}
+
+@media (max-width: 680px) {
+    section {
+        padding: 0 10px;
+        max-height: 100%;
+        max-width: 334px;
+    }
+}
 </style>
